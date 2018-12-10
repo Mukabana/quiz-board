@@ -1,8 +1,4 @@
-var score = 0; //Set score to 0 initially
-var total = 5; //This is the total number of questions in this quiz
-var point = 1; // This refers to points awarded per correct answer
-var highest = total * point; //This is the highest possible score which is the total multiplied by the points awarded
-
+var score = 0; //Set score to 0 initially. This will be increased by 1 for every correct answer submitted
 //Initializer
 function init () {
   //set correct answers
@@ -16,31 +12,51 @@ function init () {
 $(document).ready(function() {
   //Hide all questions
   $('.questionForm').hide();
+  var score = 0; //Set score to 0 initially. This will be increased by 1 for every correct answer submitted
+  var total = 5; //This is the total number of questions in this quiz
+  var point = 1; // This refers to points awarded per correct answer
+  var highest = total * point; //This is the highest possible score which is the total multiplied by the points awarded
 
   //Show first question
   $('#q1').show();
 
-  $('.questionForm #submit').click(function() {
-    //Get data attributes
-    current = $(this).parents('form:first').data('question');
-    next = $(this).parents('form:first').data('question')+1;
-    //Hide all questions
-    $('.questionForm').hide();
-    //Show next question
-    $('#q'+next+'').fadeIn(300);
-    process(''+current+'');
-    return false;
-
-    event.preventDefault();
+  $('.questionForm #submit1').click(function() {
+    var answer1 = $("input:radio[name=q1]:checked").val();
+    $('.questionForm#q2').show();
+    $('.questionForm#q1').hide();
+  event.preventDefault();
   });
+ $('.questionForm #submit2').click(function() {
+  var answer2 = $("input:radio[name=q2]:checked").val();
+  $('.questionForm#q3').show();
+  $('.questionForm#q2').hide();
+  event.preventDefault();
+ })
+ $('.questionForm #submit3').click(function() {
+  var answer3 = $("input:radio[name=q3]:checked").val();
+  $('.questionForm#q4').show();
+  $('.questionForm#q3').hide();
+  event.preventDefault();
+ })
+ $('.questionForm #submit4').click(function() {
+  var answer4 = $("input:radio[name=q4]:checked").val();
+  $('.questionForm#q5').show();
+  $('.questionForm#q4').hide();
+  event.preventDefault();
+ })
+ $('.questionForm #submit5').click(function() {
+  var answer5 = $("input:radio[name=q5]:checked").val();
+  $('.questionForm#q5').hide();
+  event.preventDefault();
+ })
 });
 
 //Process the answers. This will take the submitted answers and compare them with the correct answers that we have in the sessionStorage variable
 function process(n) {
   //Get input value
   var submitted = $('input [name=q'+n+']:checked').val();
-  if(submitted==sessionStorage.getItem('a'+n+'')) {
-        score+1;
+  if(submitted===sessionStorage.getItem('a'+n+'')) {
+        score++;
   }
 
   if(n==total) {
