@@ -1,0 +1,9 @@
+Title: User visits the quiz html page
+
+Narrative:
+As a user
+I want to see the question
+So that I can choose an answer that I think is the correct one from the choices provided
+I want to answer one question at a time
+On answering the last question, I want to see my score
+Then I want to be able to redo the quiz or leave the page
