@@ -15,7 +15,7 @@ There are no installation requirements for this quiz board. To create the board;
 |----------|
 |1. Answer question displayed then click submit button|Taken to next question|
 |2. Submit final Answer|See your final score|
-|3. Click take quiz again to retry the quiz| Takes you back to question 1|
+|3. Click 'Take Quiz Again' to retry the quiz| Takes you back to question 1|
 
 ## Known Bugs
 There are no known bugs for this quiz board.I, however, had a lot of trouble setting up a function to process the scores.
