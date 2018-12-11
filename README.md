@@ -10,7 +10,7 @@ There are no installation requirements for this quiz board. To create the board;
 * Once the user clicks the submit button for question 5, the score is shown
 * If the user wants to take the quiz again, s/he is taken back to question 1
 
-## BDD SPECS
+## BDD SPECIFICATIONS
 |INPUT|OUTPUT|
 |----------|
 |1. Answer question displayed then click submit button|Taken to next question|
